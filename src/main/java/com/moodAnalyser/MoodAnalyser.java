@@ -2,8 +2,26 @@ package com.moodAnalyser;
 
 public class MoodAnalyser {
 
+	// variable declaration
+	public String message;
+
+	// default constructor
+	public MoodAnalyser() {
+		message = null;
+	}
+
+	// parameterized constructor
+	public MoodAnalyser(String message) {
+		this.message = message;
+	}
+
+	// setter
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	// check mood whether Happy or Sad
-	public String analyseMood(String message) {
+	public String analyseMood() {
 		if (message.contains("Sad")) {
 			return "SAD";
 		} else {
@@ -13,5 +31,6 @@ public class MoodAnalyser {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome To Mood Analyser Program");
+
 	}
 }
