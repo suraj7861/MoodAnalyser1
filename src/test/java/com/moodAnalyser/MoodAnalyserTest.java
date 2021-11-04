@@ -13,9 +13,13 @@ public class MoodAnalyserTest {
 		// set message
 		moodeAnalyser.setMessage("I am in Sad Mood");
 		String expectedValue = "SAD";
-		String mood = moodeAnalyser.analyseMood();
-		Assert.assertEquals(expectedValue, mood);
-
+		String mood;
+		try {
+			mood = moodeAnalyser.analyseMood();
+			Assert.assertEquals(expectedValue, mood);
+		} catch (MoodAnalyserException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// ---------------test for Happy---------------
@@ -26,9 +30,14 @@ public class MoodAnalyserTest {
 		// set message
 		moodeAnalyser.setMessage("I am in Happy Mood");
 		String expectedValue = "HAPPY";
-		String mood = moodeAnalyser.analyseMood();
-		Assert.assertEquals(expectedValue, mood);
-
+		String mood;
+		try {
+			mood = moodeAnalyser.analyseMood();
+			Assert.assertEquals(expectedValue, mood);
+		} catch (MoodAnalyserException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 	// ---------------test for Null---------------
@@ -39,9 +48,13 @@ public class MoodAnalyserTest {
 		// set message
 		moodeAnalyser.setMessage(null);
 		String expectedValue = "HAPPY";
-		String mood = moodeAnalyser.analyseMood();
-		Assert.assertEquals(expectedValue, mood);
-
+		String mood;
+		try {
+			mood = moodeAnalyser.analyseMood();
+			Assert.assertEquals(expectedValue, mood);
+		} catch (MoodAnalyserException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
